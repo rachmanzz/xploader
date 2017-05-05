@@ -32,10 +32,10 @@ make sure your application support yield
 
 ### Check list of price ###
 
-  const result = yield Xp.listharga()
+    const result = yield Xp.listharga()
 
 
-### Check list of price ###
+### order Product ###
 
     const result = yield Xp.order({
         url: 'your domain callback url',
