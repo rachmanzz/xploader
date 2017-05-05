@@ -2,6 +2,12 @@
 
 How to use Xploader module
 
+## Install ##
+
+This plugin just can install by member of lombokcode
+
+    npm install git+https://{username}:{password}@bitbucket.org/lombokcode/xploader.git --save
+
 ### Setup Instance ###
 #### Use adonisjs
 
