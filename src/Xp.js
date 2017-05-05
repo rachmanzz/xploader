@@ -4,6 +4,8 @@ const Saldo = 'https://xp.sindonesia.net/api/saldo.php'
 const Harga = 'https://xp.sindonesia.net/api/harga.php'
 const listHarga = 'https://xp.sindonesia.net/api/daftar_harga.php'
 const Order = 'https://xp.sindonesia.net/api/order.php'
+const Deposit = 'https://xp.sindonesia.net/api/deposit.php'
+const checkDeposit = 'https://xp.sindonesia.net/api/cek_deposit.php'
 class Xp {
   constructor(obj) {
     const setup = obj
@@ -35,6 +37,21 @@ class Xp {
 
   * listharga () {
     const result = yield Request(this.Option(listHarga, {}))
+    return JSON.parse(result)
+  }
+
+  * deposit (arr) {
+    const setup = {
+      metode: arr.payment,
+      jumlah: arr.amount
+    }
+    if (typeof arr.origin !== 'undefined') setup.pengirim = arr.origin
+    const result = yield Request(this.Option(Deposit, setup))
+    return JSON.parse(result)
+  }
+
+  * checkdeposit (trx) {
+    const result = yield Request(this.Option(checkDeposit, {trx: trx}))
     return JSON.parse(result)
   }
 

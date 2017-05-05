@@ -35,6 +35,18 @@ make sure your application support yield
     const result = yield Xp.listharga()
 
 
+### Deposit ###
+
+    const result = yield Xp.deposit({
+        payment: 'your payment method', // bitcoin, dogecoin, litecoin, bca, bni, bri, mandiri, indosat, telkomsel, xlaxiata
+        amount: 'amount of deposit',
+        origin: 'if needed, setup if phone load transfer/transfer pulsa' // origin is number of phone
+      })
+
+### check deposit status ###      
+
+    const result = yield Xp.checkdeposit(trx) // trx your transaction id of deposit
+
 ### order Product ###
 
     const result = yield Xp.order({
@@ -55,3 +67,12 @@ make sure your application support yield
 
     const result = Xp.response('', {status: 'sukses'}) // request is adonisjs request return
     result // you can send result to view response to validate callback
+
+
+### result return ###
+
+Result return you can check at https://xp.sindonesia.net/api.php
+
+### Module ###
+
+Work if not any change of transaction method at https://xp.sindonesia.net/api.php
