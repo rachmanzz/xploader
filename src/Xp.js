@@ -23,19 +23,19 @@ class Xp {
     }
   }
 
-  * saldo () {
+  * balance () {
     const result = yield Request(this.Option(Saldo, {}))
     return JSON.parse(result)
   }
 
-  * harga (code) {
+  * price (code) {
     const result = yield Request(this.Option(Harga, {
       kode: code
     }))
     return JSON.parse(result)
   }
 
-  * listharga () {
+  * pricelist () {
     const result = yield Request(this.Option(listHarga, {}))
     return JSON.parse(result)
   }
