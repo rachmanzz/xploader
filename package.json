@@ -2,7 +2,7 @@
   "name": "xploader",
   "version": "0.1.0",
   "description": "phone load balance",
-  "main": "./src/xp.js",
+  "main": "./src/Xp.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

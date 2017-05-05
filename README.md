@@ -1,29 +1,57 @@
-# README #
+# Documentation #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+How to use Xploader module
 
-### What is this repository for? ###
+### Setup Instance ###
+#### Use adonisjs
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+    const xp = use('xploader') // if package is not npm module: use('/path/to/xploader/src/Xp.js')
+    const Xp = new xp({
+        id: 'your number id', // number only
+        key: 'your key xp',
+        api: 'your api xp'
+      })
 
-### How do I get set up? ###
+#### Not adonisjs framework
+make sure your application support yield
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+    const xp = require('xploader') // if package is not npm module: require('/path/to/xploader/src/Xp.js')
+    const Xp = new xp({
+        id: 'your number id', // number only
+        key: 'your key xp',
+        api: 'your api xp'
+      })
 
-### Contribution guidelines ###
+### Check Balance ###
 
-* Writing tests
-* Code review
-* Other guidelines
+    const result = yield Xp.saldo()
 
-### Who do I talk to? ###
+### Check Price of Product ###
 
-* Repo owner or admin
-* Other community or team contact
+    const result = yield Xp.harga(code) // code is code of Product
+
+### Check list of price ###
+
+  const result = yield Xp.listharga()
+
+
+### Check list of price ###
+
+    const result = yield Xp.order({
+        url: 'your domain callback url',
+        trx: 'unique trx id',
+        code: 'Product code',
+        to: 'number phone to load a balance',
+        origin: 'origin number phone, if need to message if success'
+      })
+
+### This optional method ###
+#### adonisjs
+
+    const result = Xp.response('adonis:req', request) // request is adonisjs request return
+    result.res // response.send(result.res) you can send to validate callback
+
+#### not adonisjs framework
+
+    const result = Xp.response('', {status: 'sukses'}) // request is adonisjs request return
+    result // you can send result to view response to validate callback
