@@ -4,24 +4,11 @@ How to use Xploader module
 
 ## Install ##
 
-This plugin just can install by member of lombokcode
-
-    npm install git+https://{username}:{password}@bitbucket.org/lombokcode/xploader.git --save
+    npm install rachmanzz/xploader
 
 ### Setup Instance ###
-#### Use adonisjs
 
-    const xp = use('xploader') // if package is not npm module: use('/path/to/xploader/src/Xp.js')
-    const Xp = new xp({
-        id: 'your number id', // number only
-        key: 'your key xp',
-        api: 'your api xp'
-      })
-
-#### Not adonisjs framework
-make sure your application support yield
-
-    const xp = require('xploader') // if package is not npm module: require('/path/to/xploader/src/Xp.js')
+    const xp = require('xploader') 
     const Xp = new xp({
         id: 'your number id', // number only
         key: 'your key xp',
@@ -65,18 +52,6 @@ make sure your application support yield
       })
 
 ### This optional method ###
-#### adonisjs
-
-    const result = Xp.response('adonis:req', request) // request is adonisjs request return
-    result.res // response.send(result.res) you can send to validate callback
-
-#### not adonisjs framework
-
-    const result = Xp.response('', {status: 'sukses'}) // sukses if success, gagal if error/failed
-    result // you can send result to view response to validate callback
-
-
-### result return ###
 
 Result return you can check at https://xp.sindonesia.net/api.php
 

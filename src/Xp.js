@@ -66,28 +66,6 @@ class Xp {
     const result = yield Request(this.Option(Order, setup))
     return JSON.parse(result)
   }
-
-  response (arrg, req) {
-    if ('adonis:req' === arrg) {
-      if (req.input('status') === 'sukses') {
-        return {
-          trx: req.input('trx'),
-          code: req.input('kod')
-          to: req.input('isi'),
-          sn: req.input('sn'),
-          res: 'sukses*ok*'
-        }
-      } else {
-        return {trx: req.input('trx'), to: req.input('isi'), res: 'gagal*ok*'}
-      }
-    } else {
-      if (req.status === 'sukses') {
-        return 'sukses*ok*'
-      } else {
-        return 'gagal*ok*'
-      }
-    }
-  }
 }
 
 module.exports = Xp
