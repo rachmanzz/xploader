@@ -1,5 +1,5 @@
 'use strict'
-const Request = use('request-promise')
+const Request = require('request-promise')
 const Saldo = 'https://xp.sindonesia.net/api/saldo.php'
 const Harga = 'https://xp.sindonesia.net/api/harga.php'
 const listHarga = 'https://xp.sindonesia.net/api/daftar_harga.php'
